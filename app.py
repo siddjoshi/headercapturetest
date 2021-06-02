@@ -34,7 +34,7 @@ def error_405(error):
 
 @app.route('/', methods=['GET'])
 def csp_receiver():
-    f = open("headerlogs.txt", "a")
+    f = open("/home/LogFiles/headerlogs.txt", "a")
 
     ## Get Remote IP Address
     ip_address = request.remote_addr
