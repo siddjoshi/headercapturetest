@@ -38,18 +38,18 @@ def csp_receiver():
 
     ## Get Remote IP Address
     ip_address = request.remote_addr
-    f.write("Remote IP Address is : " + ip_address)    
+    f.write("Remote IP Address is : " + ip_address + "\n")    
 
     ## Get X-Forwarded-For 
     if request.headers.has_key('X-Forwarded-For'):
         clientip = request.headers['X-Forwarded-For']
-        f.write("X-Forwarded header is: " + clientip)
+        f.write("X-Forwarded header is: " + clientip + "\n") 
         #return make_response('', 200)
     
     ## Get True Client IP
     if request.headers.has_key('True-Client-IP'):
         trueclientip = request.headers['True-Client-IP']
-        f.write("True Client IP header is: " + trueclientip)
+        f.write("True Client IP header is: " + trueclientip + "\n")
         #return make_response('', 200)
 
     f.close()
